@@ -10,29 +10,11 @@ libxt6 \
 libgl1-mesa-glx \
 libcurl4-openssl-dev \
 libglpk-dev \
-libxml2-dev 
-
-COPY install_rsamtools.R .
-
-RUN Rscript install_rsamtools.R
-
-COPY install_bioc_packages.R .
-
-RUN Rscript install_bioc_packages.R
-
-COPY install_sierra.R .
-
-RUN apt-get install -y \
+libxml2-dev \
 liblzma-dev
 
-RUN Rscript install_sierra.R
+COPY install_packages.R .
 
-RUN Rscript -e "install.packages('optparse')"
+RUN Rscript install_packages.R
 
-COPY FindPeaks.R /usr/local/bin
-
-COPY CountPeaks.R /usr/local/bin
-
-COPY MergePeakCoordinates.R /usr/local/bin
-
-COPY AnnotatePeaksFromGTF.R /usr/local/bin
+COPY scripts/*.R /usr/local/bin
