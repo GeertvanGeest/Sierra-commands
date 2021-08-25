@@ -28,7 +28,7 @@ docker pull geertvangeest/sierra:latest
 ### Singularity
 
 ```sh
-singularity pull docker://geertvangeest/sierra
+singularity pull docker://geertvangeest/sierra:latest
 ```
 
 ## Usage 
@@ -62,17 +62,21 @@ Options:
 
 ### Docker
 
+For example for `AnnotatePeaksFromGTF.R`:
+
 ```sh
 docker run --rm geertvangeest/sierra AnnotatePeaksFromGTF.R -h
 ```
 
 ### Singularity
 
+For example for `AnnotatePeaksFromGTF.R`:
+
 ```sh
-./sierra_latest AnnotatePeaksFromGTF.R -h
+./sierra_latest.sif AnnotatePeaksFromGTF.R -h
 ```
 
 or 
 ```sh
-singularity exec ./sierra_latest AnnotatePeaksFromGTF.R -h
+singularity exec ./sierra_latest.sif AnnotatePeaksFromGTF.R -h
 ```
