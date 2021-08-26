@@ -7,16 +7,13 @@ Code for calling resource intensive functions of [Sierra](https://github.com/VCC
 Dependencies are:
 - `optparse` (CRAN)
 - `devtools` (CRAN)
-- `BiocManager` (CRAN)
 - `Sierra` (github)
 
 Install them like so:
 
 ```
-install.packages(c("optparse", "devtools", "BiocManager"))
-# some bug fixes in geertvangeest
-# will change to VCCRI if fixed
-devtools::install_github("geertvangeest/Sierra", build = TRUE)
+install.packages(c("optparse", "devtools"))
+devtools::install_github("VCCRI/Sierra", build = TRUE)
 ```
 
 ### Docker
