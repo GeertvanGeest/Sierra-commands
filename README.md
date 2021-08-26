@@ -1,4 +1,4 @@
-# Sierra-docker
+# Sierra commands
 
 Code for calling resource intensive functions of [Sierra](https://github.com/VCCRI/Sierra).
 
@@ -33,7 +33,7 @@ singularity pull docker://geertvangeest/sierra:latest
 
 ## Usage 
 
-The functions `FindPeaks`, `CountPeaks`, `MergePeakCoordinates` and `AnnotatePeaksFromGTF` are incorporated in a shell script and callable from the command line. You find them in the directory scripts. Get usage info by typing `Rscript [function].R -h`.
+The functions `FindPeaks`, `CountPeaks`, `MergePeakCoordinates` and `AnnotatePeaksFromGTF` are incorporated in a shell script and callable from the command line. You find them in the directory [scripts](scripts). Get usage info by typing `Rscript [function].R -h`.
 E.g. `Rscript AnnotatePeaksFromGTF.R -h` results in: 
 
 ```
