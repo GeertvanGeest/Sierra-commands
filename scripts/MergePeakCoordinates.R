@@ -2,7 +2,7 @@
 library("optparse")
  
 option_list <- list(
-    make_option(c("-o", "--output"), type = "character", default = "peaks_merged.txt", help = "Output file [default = %default]"),
+    make_option(c("-o", "--output_file"), type = "character", default = "peaks_merged.txt", help = "file to write the set of merged peaks to [default = %default]"),
     make_option(c("-c", "--ncores"), type = "integer", default = 1, help = "Number of cores[default= %default]")
 )
 
@@ -20,4 +20,7 @@ peak.dataset.table = data.frame(Peak_file = opt$args,
 
 # write.table(peak.dataset.table, stdout())
 
-MergePeakCoordinates(peak.dataset.table, output.file = opt$output, ncores = opt$ncores)
+MergePeakCoordinates(
+  peak.dataset.table, 
+  output.file = opt$output_file, 
+  ncores = opt$ncores)

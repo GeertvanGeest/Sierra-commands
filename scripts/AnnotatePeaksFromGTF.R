@@ -2,9 +2,9 @@
 library("optparse")
  
 option_list <- list(
-    make_option(c("-p", "--peaks"), type="character", help="Input (merged) peaks file"),
-    make_option(c("-g", "--gtf"), type="character", help="Input GTF"),
-    make_option(c("-o", "--output"), type = "character", default = "peak_annotations.txt", help = "Output file [default = %default]"),
+    make_option(c("-p", "--peaks_sites_file"), type="character", help="a file of peak coordinates."),
+    make_option(c("-g", "--gtf_file"), type="character", help="GTF reference file."),
+    make_option(c("-o", "--output_file"), type = "character", default = "peak_annotations.txt", help = "file to write the annotations to [default = %default]"),
     make_option(c("-r", "--genome"), type="character", help="BSGenome package (e.g. BSgenome.Mmusculus.UCSC.mm10). Will be installed if not available"),
     make_option(c("-l", "--library"), type = "character", default = "~/.singularityR/", help = "Path in which to install BSGenome package (should be writeable)")
 )
@@ -26,8 +26,8 @@ dir.create(opt$library, recursive = TRUE)
 BiocManager::install(opt$genome, ask = FALSE, update = FALSE)
 library(opt$genome, character.only = TRUE)
 
-AnnotatePeaksFromGTF(peak.sites.file = opt$peaks, 
-                     gtf.file = opt$gtf,
-                     output.file = opt$output, 
+AnnotatePeaksFromGTF(peak.sites.file = opt$peaks_sites_file, 
+                     gtf.file = opt$gtf_file,
+                     output.file = opt$output_file, 
                      genome = get(opt$genome))
 
