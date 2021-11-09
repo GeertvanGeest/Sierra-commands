@@ -12,7 +12,8 @@ option_list <- list(
     make_option(c("-u", "--noUMI"), action="store_true", default=FALSE, help = "Boolean. Do not count UMI [default= %default]")
 )
  
-opt_parser <- OptionParser(option_list=option_list)
+opt_parser <- OptionParser(option_list=option_list, 
+    description = "Generates a UMI count matrix where rows are the peaks and columns are the cells. Counts cells that are identified through a provided 'white list' of cell barcodes. If alignment done using CellRanger, this will be the barcodes.tsv file contained in the 'filtered_gene_matrices_mex' folder for example.")
 opt <- parse_args(opt_parser)
 
 # print(opt)

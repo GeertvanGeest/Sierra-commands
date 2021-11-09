@@ -34,18 +34,18 @@ The functions `FindPeaks`, `CountPeaks`, `MergePeakCoordinates` and `AnnotatePea
 E.g. `Rscript AnnotatePeaksFromGTF.R -h` results in: 
 
 ```
-Usage: AnnotatePeaksFromGTF.R [options]
-
+Usage: ./scripts/AnnotatePeaksFromGTF.R [options]
+Annotate a set of peak coordinates according to genomic features the coordinates fall on - 3'UTR, exon, intron and 5'UTR, and annotate proximity to motifs. Motifs include the canonical polyA motif, A-rich regions and T-rich regions.
 
 Options:
-        -p PEAKS, --peaks=PEAKS
-                Input (merged) peaks file
+        -p PEAKS_SITES_FILE, --peaks_sites_file=PEAKS_SITES_FILE
+                a file of peak coordinates.
 
-        -g GTF, --gtf=GTF
-                Input GTF
+        -g GTF_FILE, --gtf_file=GTF_FILE
+                GTF reference file.
 
-        -o OUTPUT, --output=OUTPUT
-                Output file [default = peak_annotations.txt]
+        -o OUTPUT_FILE, --output_file=OUTPUT_FILE
+                file to write the annotations to [default = peak_annotations.txt]
 
         -r GENOME, --genome=GENOME
                 BSGenome package (e.g. BSgenome.Mmusculus.UCSC.mm10). Will be installed if not available

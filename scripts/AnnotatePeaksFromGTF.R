@@ -9,7 +9,8 @@ option_list <- list(
     make_option(c("-l", "--library"), type = "character", default = "~/.singularityR/", help = "Path in which to install BSGenome package (should be writeable)")
 )
  
-opt_parser <- OptionParser(option_list=option_list)
+opt_parser <- OptionParser(option_list=option_list, 
+    description = "Annotate a set of peak coordinates according to genomic features the coordinates fall on - 3'UTR, exon, intron and 5'UTR, and annotate proximity to motifs. Motifs include the canonical polyA motif, A-rich regions and T-rich regions.")
 opt <- parse_args(opt_parser)
 # print(opt)
 # As previously defined
