@@ -6,7 +6,7 @@ option_list <- list(
     make_option(c("-g", "--gtf_file"), type="character", help="GTF reference file."),
     make_option(c("-o", "--output_file"), type = "character", default = "peak_annotations.txt", help = "file to write the annotations to [default = %default]"),
     make_option(c("-r", "--genome"), type="character", help="BSGenome package (e.g. BSgenome.Mmusculus.UCSC.mm10). Will be installed if not available"),
-    make_option(c("-l", "--library"), type = "character", default = "~/.singularityR/", help = "Path in which to install BSGenome package (should be writeable)")
+    make_option(c("-l", "--library"), type = "character", default = "~/.singularityR/", help = "Path in which to install BSGenome package (should be writeable) [default = %default]")
 )
  
 opt_parser <- OptionParser(option_list=option_list, 
